@@ -19,7 +19,8 @@ class AlphaScattering2d_cov(object):
         filter_path=None,#'./filters/'
         device='gpu',
     ):
-        if not torch.cuda.is_available(): device='cpu'
+        # if not torch.cuda.is_available(): 
+        device='cpu'
         self.M, self.N, self.J, self.L = M, N, J, L
         self.nb_chunks = nb_chunks  # number of chunks to cut whp cov
         self.chunk_id = chunk_id
